@@ -1,13 +1,10 @@
 language: node_js
 node_js:
   - "8"
-cache:
-  npm: true
-  directories:
-    - node_modules
 script:
   - npm test
 install:
+  - npm install
   - npm install -g travis-ci-cloudfront-invalidation
 before_deploy:
   - npm run build
@@ -21,4 +18,4 @@ deploy:
   on:
     branch: main
 after_deploy:
-  - travis-ci-cloudfront-invalidation -a $AWS_ACCESS_KEY_ID -s $AWS_SECRET_ACCESS_KEY -c $CLOUDFRONT_ID -i '/*' -b $TRAVIS_BRANCH -p $TRAVIS_PULL_REQUEST -o 'main'
+  - travis-ci-cloudfront-invalidation -a $AWS_ACCESS_KEY_ID -s $AWS_SECRET_ACCESS_KEY -c $CLOUDFRONT_ID -i '/*' -b $TRAVIS_BRANCH -p $TRAVIS_PULL_REQUEST
