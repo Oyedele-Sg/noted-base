@@ -9,7 +9,7 @@
     "test": "jest",
     "deploy": "npm run build && aws s3 cp dist/ s3://segunoyedele.com --recursive"
   },
-  "author": "Segun Oyedele <hello@segunoyedele.com> (http://segunoyedele.net)",
+  "author": "Steve Kinney <hello@stevekinney.net> (http://stevekinney.net)",
   "license": "MIT",
   "private": true,
   "dependencies": {

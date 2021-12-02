@@ -1,23 +1,23 @@
-const webpack = require('webpack');
-const configuration = require('./webpack.config');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const webpack = require("webpack");
+const configuration = require("./webpack.config");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = Object.assign({}, configuration, {
   entry: {
-    main: ['react-hot-loader/patch', configuration.entry.main],
+    main: ["react-hot-loader/patch", configuration.entry.main],
   },
-  mode: 'development',
+  mode: "development",
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new ExtractTextPlugin({
       allChunks: true,
-      filename: '[name].css',
+      filename: "[name].css",
     }),
     new HtmlWebpackPlugin({
-      template: './public/index.html',
-      title: 'Marketing Campaigns',
+      template: "./public/index.html",
+      title: "Marketing Campaigns",
     }),
   ],
   devServer: {
