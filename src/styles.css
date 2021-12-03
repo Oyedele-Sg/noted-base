@@ -69,7 +69,7 @@ a:active {
   display: flex;
   color: #fff;
   background-color: salmon;
-  border-bottom: gold;
+  border-bottom: silver;
   grid-column-start: 1;
   grid-column-end: 3;
   align-items: center;
